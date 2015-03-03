@@ -5,10 +5,12 @@ import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.ldap.core.LdapTemplate;
+import org.springframework.ldap.repository.config.EnableLdapRepositories;
 import org.springframework.security.ldap.authentication.PasswordComparisonAuthenticator;
 import org.springframework.security.ldap.search.FilterBasedLdapUserSearch;
 
 @Configuration
+@EnableLdapRepositories("com.example.repositories.ldap")
 public class LdapConfiguration {
 
     @Autowired
