@@ -1,0 +1,1 @@
+Small project intended to test the Spring Boot and LDAP integration
