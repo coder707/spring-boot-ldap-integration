@@ -1,0 +1,15 @@
+sever:
+    port: 8080
+
+spring:
+    application:
+        name: Spring LDAP integration test
+
+    datasource:
+        platform: h2
+        name: ldap-integration
+        initialize: true
+        url: jdbc:h2:mem:ldap-integration
+        username: sa
+        password:
+        driver-class-name: org.h2.Driver

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:ldap="http://www.springframework.org/schema/ldap"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/ldap http://www.springframework.org/schema/ldap/spring-ldap.xsd">
+
+    <ldap:context-source id="contextSource" url="${ldap.url}" username="${ldap.userDn}" password="${ldap.password}"/>
+
+    <ldap:ldap-template id="ldapTemplate" context-source-ref="contextSource"/>
+
+    <!--
+        This will scan the com.example.repositories package for interfaces
+        extending CrudRepository, automatically creating repository beans based on these interfaces
+    -->
+    <ldap:repositories base-package="com.example.ldap.repositories"/>
+
+    <!-- Required to make sure BaseLdapName is populated in LdapService -->
+    <bean class="org.springframework.ldap.core.support.BaseLdapPathBeanPostProcessor" />
+</beans>
