@@ -28,6 +28,8 @@
         <spring.boot.version>1.2.2.RELEASE</spring.boot.version>
         <spring.security.version>3.2.6.RELEASE</spring.security.version>
         <spring.ldap.core.version>2.0.2.RELEASE</spring.ldap.core.version>
+
+        <tomcat.version>8.0.18</tomcat.version>
     </properties>
 
     <dependencies>
